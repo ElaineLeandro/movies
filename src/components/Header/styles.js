@@ -5,12 +5,15 @@ export const Container = styled.header`
     width: 100%;
     height: 116px;
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_900};
-    border-bottom: 1px solid ${({theme}) => theme.COLORS.BACKGROUND_700};
+    border-bottom-width: 6px;
+    border-bottom-style: solid;
+    border-bottom-color: ${({theme})=> theme.COLORS.BACKGROUND_700};
+    margin-bottom: 32px;
     
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-
    
 `
 export const  Brand = styled.h1`
@@ -40,7 +43,7 @@ export const Profile = styled.div`
     margin: 123px;
 
     >img{
-        width: 100%;
+        width: 64px;
         height:64px;
         border-radius: 50%;
 

@@ -1,34 +1,46 @@
 import styled from  'styled-components'
 
 export const Container = styled.div`
-    width: 0 auto;
+    width: 100%;
     
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header"
+    "title buttonAddition"
+    "package package";
+    margin: 0 auto;
+   
     background-color: ${({theme})=> theme.COLORS. BACKGROUND_900}
 
-    grid-template-areas: 
-    "header", "Title", "Package",
+    
 
 `
 export const Title = styled.title`
+    grid-area: title; 
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 50px;
+    grid-gap: 935px;
+    
+    margin-left: 120px;
     text-align: center;
+    inline-size: max-content;
     font-size:32px;
     color: ${({theme})=> theme.COLORS.WHINTE}
-    
+   
 `
 
 
 export const Package = styled.div`
+    grid-area: package; 
+    width: 85%;
+
     display: flex;
-    flex-direction: column;
-    margin-top: 40px;
+    flex-direction: column; 
+    margin: 37px auto;
     border: none;
     border-radius: 16px;
     background-color: ${({theme})=> theme.COLORS. BACKGROUND_500};
     padding: 32px;
+   
 
     >subtitle{
         display:flex;

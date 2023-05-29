@@ -13,6 +13,32 @@ export function Home(){
             Meus filmes
            <ButtonAddition/>
             </Title>
+            <Package >
+                <subtitle>Extraordinário</subtitle>
+                <Star>
+                    {Array(4).fill(<ImStarFull/>)}
+                <ImStarEmpty/>
+                </Star>
+                
+                 <p>O filme Extraordinário nos provoca a pensar na possibilidade de construirmos uma outra sociedade, 
+                 na qual “talvez possamos mudar nosso jeito de ver” o ser humano. Sem essa postura, nossos conteúdos são vazios,
+                  sem sentido e destinados ao esquecimento pelos próprios estudantes.</p>
+    
+            <Tagging/>
+            </Package>
+            <Package>
+                <subtitle>Extraordinário</subtitle>
+                <Star>
+                    {Array(4).fill(<ImStarFull/>)}
+                <ImStarEmpty/>
+                </Star>
+                
+                 <p>O filme Extraordinário nos provoca a pensar na possibilidade de construirmos uma outra sociedade, 
+                 na qual “talvez possamos mudar nosso jeito de ver” o ser humano. Sem essa postura, nossos conteúdos são vazios,
+                  sem sentido e destinados ao esquecimento pelos próprios estudantes.</p>
+    
+            <Tagging/>
+            </Package>
             <Package>
                 <subtitle>Extraordinário</subtitle>
                 <Star>

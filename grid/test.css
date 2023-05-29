@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #1aa3e2;
+};
+
+.container{
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-areas: 
+    "header header"
+    "nav"
+    "text"
+    "footer";
+};
+
+
+.header{
+    grid-area: header;
+    background: #2e1ae2;
+};
+
+.nav{
+    grid-area: nav;
+    background-color: #1ae2c7;
+};
+
+.text{
+    grid-area: text;
+    background-color: #1aa3e2;
+};
+
+.footer{
+    grid-area: footer;
+    background-color: #e21ac7;
+};
+

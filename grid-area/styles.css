@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    background-color: blue;
+    gap: 10px 12px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "text"
+    "footer"
+    ;
+}
+
+.header{
+    grid-area: header;
+   
+}
+
+.nav{
+    grid-area: nav;
+    
+
+}
+
+.text{
+    grid-area: text;
+
+}
+
+.footer{
+    grid-area: footer;
+
+}
