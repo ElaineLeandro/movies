@@ -12,7 +12,7 @@ export default{
         GRAY_400: "#948F99", 
 
         PINK: "#E73252",
-        WHINTE: "#FFFFFF",
+        WHITE: "#FFFFFF",
         PINKDARK:'#FF859B'
 
     }

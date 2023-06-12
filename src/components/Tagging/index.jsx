@@ -1,9 +1,9 @@
 import {Container} from './styles'
 
-export function Tagging(){
+export function Tagging({tag}){
     return(
         <Container>
-         Família
+           {tag}
         </Container>
     )
 }
