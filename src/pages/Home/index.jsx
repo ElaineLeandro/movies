@@ -15,7 +15,7 @@ export function Home(){
            <ButtonAddition/>
           
             </Title>
-            <Package >
+            <Package>
                 <Card
                     title="Extraordinário"
                     icon=" "

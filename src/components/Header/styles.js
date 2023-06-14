@@ -9,6 +9,7 @@ export const Container = styled.header`
     border-bottom-style: solid;
     border-bottom-color: ${({theme})=> theme.COLORS.BACKGROUND_700};
     margin-bottom: 32px;
+    padding: 0 7vw;
     
 
     display: flex;
@@ -20,7 +21,7 @@ export const  Brand = styled.h1`
     font-size: 24px;
     color: ${({theme}) => theme.COLORS.PINK};
     text-align: center;
-    margin: 123px;
+    padding: 0 5vw;
     
     
 `
@@ -40,7 +41,7 @@ export const Input = styled.input`
 export const Profile = styled.div`
     display: flex;
     align-items: center;
-    margin: 123px;
+    padding: 0 5vw;
 
     >img{
         width: 64px;

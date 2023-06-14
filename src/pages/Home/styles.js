@@ -16,9 +16,10 @@ export const Container = styled.div`
 export const Title = styled.title`
     grid-area: title; 
     display: flex;
-    grid-gap: 935px;
+    grid-gap: 801px;
     
     margin-left: 120px;
+    padding: 0 4vw;
     text-align: center;
     inline-size: max-content;
     font-size:32px;
@@ -30,7 +31,7 @@ export const Title = styled.title`
 export const Package = styled.div`
     grid-area: package; 
     width: 85%;
-    height; auto;
+    height: auto;
 
     display: flex;
     flex-direction: column; 
@@ -38,8 +39,9 @@ export const Package = styled.div`
     border: none;
     border-radius: 16px;
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
-    padding: 32px;
     gap: 24px;
+    padding: 0 5vw;
+    overflow-y: auto;
     
     
 `

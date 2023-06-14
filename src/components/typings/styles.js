@@ -10,7 +10,7 @@ export const  Container = styled.div`
         gap: 8px;
         font-weight: 700;
         font-size: 24px;
-        line-height: 32px;
+        line-height: 22px;
         color: ${({theme})=> theme.COLORS.GRAY_200}; 
    }
 

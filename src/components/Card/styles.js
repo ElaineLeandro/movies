@@ -7,7 +7,7 @@ export const  Container = styled.div`
     flex-direction: column;
     width: 100%;
     height: 200px;
-    padding: 32px;
+    padding: 22px;
     border:none;
     border-radius: 16px;
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_500}
