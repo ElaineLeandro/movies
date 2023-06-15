@@ -26,8 +26,7 @@ import { ImStarFull,ImStarEmpty} from "react-icons/im";
             <Tagging tag="Drama" />
             <Tagging tag="Familia" />
             </Flags>
-            
-
+           
         </Container>
     )
 }

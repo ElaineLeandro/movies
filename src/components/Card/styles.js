@@ -10,8 +10,8 @@ export const  Container = styled.div`
     padding: 22px;
     border:none;
     border-radius: 16px;
-    background-color: ${({theme})=> theme.COLORS.BACKGROUND_500}
-    
+    background-color: ${({theme})=> theme.COLORS.BACKGROUND_500};
+       
 
 `
 export const Title = styled.h1`
@@ -48,3 +48,4 @@ export const Flags = styled.div`
     gap: 8px;
     
 `
+

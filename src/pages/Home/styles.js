@@ -23,7 +23,7 @@ export const Title = styled.title`
     text-align: center;
     inline-size: max-content;
     font-size:32px;
-    color: ${({theme})=> theme.COLORS.WHITE}
+    color: ${({theme})=> theme.COLORS.WHITE};
    
 `
 
@@ -41,10 +41,25 @@ export const Package = styled.div`
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
     gap: 24px;
     padding: 0 5vw;
-    overflow-y: auto;
-    
+
+    overflow-y: scroll;
+    height: 100vh;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({theme})=> theme.COLORS.DAR};
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+  }
     
 `
+
+   
+
 
 
 
