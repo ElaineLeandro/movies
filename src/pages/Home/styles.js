@@ -42,7 +42,7 @@ export const Package = styled.div`
     overflow-y: auto;
     height: 50vh;
 
-    scrollbar-color: #E73252 transparent;
+    scrollbar-color: #FF859B transparent;
 
     &::-webkit-scrollbar {
       width: 10px;
