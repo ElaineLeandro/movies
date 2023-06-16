@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Container = styled.header`
+export const Section = styled.header`
     grid-area: header;
     width: 100%;
     height: 116px;
@@ -9,8 +9,14 @@ export const Container = styled.header`
     border-bottom-style: solid;
     border-bottom-color: ${({theme})=> theme.COLORS.BACKGROUND_700};
     margin-bottom: 32px;
-    padding: 0 7vw;
     
+    display: flex;
+    justify-content: center;
+    align-items:center;
+`
+
+export const Container = styled.div`
+    width: 80%;  
 
     display: flex;
     align-items: center;
@@ -20,10 +26,7 @@ export const Container = styled.header`
 export const  Brand = styled.h1`
     font-size: 24px;
     color: ${({theme}) => theme.COLORS.PINK};
-    text-align: center;
-    padding: 0 5vw;
-    
-    
+    text-align: center;  
 `
 
 export const Input = styled.input`
@@ -41,7 +44,7 @@ export const Input = styled.input`
 export const Profile = styled.div`
     display: flex;
     align-items: center;
-    padding: 0 5vw;
+   
 
     >img{
         width: 64px;

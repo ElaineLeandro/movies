@@ -5,13 +5,13 @@ export const  Container = styled.div`
     grid-area: typings;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 20px);
     height: 200px;
     padding: 22px;
     border:none;
     border-radius: 16px;
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_500};
-       
+   
 
 `
 export const Title = styled.h1`

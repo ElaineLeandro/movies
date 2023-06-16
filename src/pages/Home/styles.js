@@ -1,10 +1,10 @@
 import styled from  'styled-components'
 
 export const Container = styled.div`
-    width: 100%;
+    width: 80%;
     
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas: "header header"
     "title buttonAddition"
     "package package";
@@ -16,12 +16,10 @@ export const Container = styled.div`
 export const Title = styled.title`
     grid-area: title; 
     display: flex;
-    grid-gap: 801px;
+    width: 100%;
+    justify-content: space-between;
     
-    margin-left: 120px;
-    padding: 0 4vw;
     text-align: center;
-    inline-size: max-content;
     font-size:32px;
     color: ${({theme})=> theme.COLORS.WHITE};
    
@@ -30,31 +28,48 @@ export const Title = styled.title`
 
 export const Package = styled.div`
     grid-area: package; 
-    width: 85%;
-    height: auto;
-
+   
+    
     display: flex;
     flex-direction: column; 
-    margin: 37px auto;
+    margin-top: 37px;
     border: none;
     border-radius: 16px;
-    background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
+   
     gap: 24px;
-    padding: 0 5vw;
+  
 
-    overflow-y: scroll;
-    height: 100vh;
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: ${({theme})=> theme.COLORS.DAR};
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: #f2f2f2;
-    border-radius: 4px;
-  }
+    overflow-y: auto;
+    height: 50vh;
+
+    scrollbar-color: #E73252 transparent;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      border-radius: 10px;
+    }
+   
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({theme})=> theme.COLORS.PINK};
+      border-radius: 10px;
+      height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+    background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
+    border-radius: 3px;
+    }
+
+    /* ::-webkit-scrollbar {
+      width: 30px;
+    }
+    ::-webkit-scrollbar-thumb {
+   
+    border-radius:10px;
+    }
+    ::-webkit-scrollbar-track {
+    background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
+    border-radius: 3px;
+  } */
     
 `
 

@@ -8,8 +8,9 @@ import { BiArrowBack } from 'react-icons/bi';
 export function Home(){
  
     return(
+        <>
+        <Header/>
         <Container>
-            <Header/>
             <Title>
             Meus filmes 
            <ButtonAddition/>
@@ -50,5 +51,7 @@ export function Home(){
             </Package>          
         
         </Container>
+        </>
+           
     )
 }

@@ -1,8 +1,8 @@
-import { Brand, Container, Profile, Input } from "./styles";
+import { Brand, Container, Profile, Input, Section } from "./styles";
 
 export function Header(){
     return(
-        
+        <Section>
         <Container> 
 
             <Brand>
@@ -25,5 +25,6 @@ export function Header(){
                    
             </Profile>
         </Container>
+        </Section>
     )
 }
