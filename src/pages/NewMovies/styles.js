@@ -1,18 +1,38 @@
 import styled from  'styled-components'
 
 export const Container= styled.div`
-    width: 100%;
+    width: 82%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: 105px auto; */
+    grid-template-columns: 1fr;
     grid-template-areas:
     "header header"
     "linkMovie linkMovie"
     "newMovie newMovie"
-    "form form";
+    "form form"
+    "button button";
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_900};
+    margin: 0 auto;
+
+    overflow-y: auto;
+    height: 50vh;
+    padding:24px;
+
+    scrollbar-color: #FF859B transparent;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      border-radius: 10px;
+    }
    
-    
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({theme})=> theme.COLORS.PINK};
+      border-radius: 10px;
+      height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+    background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
+    border-radius: 3px;
+    }
 `; 
 
 
@@ -22,6 +42,7 @@ export const LinkMovie = styled.div`
   align-items: center;
   justify-content: start;
   gap:10px;
+  margin-bottom:24px;
 
   >a{
   color: ${({theme})=> theme.COLORS.PINKDARK};
@@ -32,6 +53,7 @@ export const NewMovie = styled.title`
   grid-area: newMovie;
   display: flex;
   font-size: 36px;
+  margin-bottom:40px;
   color: ${({theme})=> theme.COLORS.WHITE};
 `;
 
@@ -46,7 +68,7 @@ export const Form = styled.form`
 
 
 export const Input = styled.input`
-  width:537px;
+  width:907px;
   height: 55px;
 
   display: flex;
@@ -60,7 +82,16 @@ export const Input = styled.input`
   color: ${({theme}) => theme.COLORS.GRAY_100};
 `
 
+export const ContainerButton = styled.div`
+  grid-area: button;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 16px;
+
+`
 export const ButtonDelete = styled.button`
+  grid-area:buttonDelete;
   width:537px;
   height: 56px;
   border: none;
@@ -72,6 +103,7 @@ export const ButtonDelete = styled.button`
 `
 
 export const ButtonSave = styled.button`
+  grid-area:buttonSave;
   width:537px;
   height: 56px;
   border: none;

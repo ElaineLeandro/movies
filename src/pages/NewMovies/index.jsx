@@ -1,45 +1,42 @@
 import { Header } from '../../components/Header'
 import { Textarea } from '../../components/TexTarea';
-import { Container,Form, LinkMovie, NewMovie,Input, ButtonDelete, ButtonSave} from "./styles";
+import { Container,Form, LinkMovie, NewMovie,Input, ButtonDelete, ButtonSave, ContainerButton} from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
 
 
 export function NewMovies(){
+  return(
+    <>
+      <Header/>
 
-    return(
-      <>
-       <Header/>
+      <Container>
 
-          <Container>
-                      
-            <LinkMovie>
-            <BiArrowBack color="#FF859B" size={16}/>  
-            <a href="/">Voltar</a>
-            </LinkMovie>
+        <LinkMovie>
+          <BiArrowBack color="#FF859B" size={16}/>  
+          <a href="/">Voltar</a>
+        </LinkMovie>
+          <NewMovie>
+             Novo filme
+          </NewMovie>
+        <Form>
+          <Input placeholder='Título'/>
+            <Input placeholder='Sua nota (de 0 a 5)'/>
+            <Textarea placeholder='Observações'/>                                  
+          </Form>
 
-            <NewMovie>
-                Novo filme
-            </NewMovie>
-            
+      <ContainerButton>
+
+        <ButtonDelete>
+          Excluir filme
+        </ButtonDelete>
+
+        <ButtonSave>
+          Salvar Filme
+        </ButtonSave>   
         
-            <Form>
-               <Input placeholder='Título'/>
-               <Input placeholder='Sua nota (de 0 a 5)'/>
-               <Textarea placeholder='Observações'/>                                  
-            </Form>
-           
-             <ButtonDelete>
-               Excluir filme
-            </ButtonDelete>
-             
-            <ButtonSave>
-             Salvar Filme
-            </ButtonSave>   
-                    
-        </Container>
-   
-      </>
-         
-      
-    )
+      </ContainerButton>
+                         
+      </Container>
+    </>
+  )
 }
