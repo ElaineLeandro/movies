@@ -1,6 +1,6 @@
 import styled from  'styled-components'
 
-export const ContainerNew = styled.div`
+export const Container= styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -14,6 +14,7 @@ export const ContainerNew = styled.div`
    
     
 `; 
+
 
 export const LinkMovie = styled.div`
   grid-area:linkMovie;

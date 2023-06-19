@@ -1,18 +1,17 @@
-import {Header} from '../../components/Header'
-import { NewItem } from '../../components/NewItem';
-import { Section } from '../../components/Section';
-
+import { Header } from '../../components/Header'
 import { Textarea } from '../../components/TexTarea';
-import { Container, Form, LinkMovie, NewMovie,Input, ButtonDelete, ButtonSave} from "./styles";
+import { Container,Form, LinkMovie, NewMovie,Input, ButtonDelete, ButtonSave} from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
 
 
 export function NewMovies(){
 
     return(
-        <Container>
-            <Header/>
-            
+      <>
+       <Header/>
+
+          <Container>
+                      
             <LinkMovie>
             <BiArrowBack color="#FF859B" size={16}/>  
             <a href="/">Voltar</a>
@@ -26,21 +25,21 @@ export function NewMovies(){
             <Form>
                <Input placeholder='Título'/>
                <Input placeholder='Sua nota (de 0 a 5)'/>
-               <Textarea placeholder='Observações'/> 
-             {/* <Section title="Links úteis">
-                <NewItem value="https" />
-             </Section>                          */}
+               <Textarea placeholder='Observações'/>                                  
             </Form>
-             
+           
              <ButtonDelete>
                Excluir filme
             </ButtonDelete>
              
             <ButtonSave>
              Salvar Filme
-            </ButtonSave>  
- 
+            </ButtonSave>   
                     
         </Container>
+   
+      </>
+         
+      
     )
 }

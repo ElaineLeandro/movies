@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Section = styled.header`
+export const Container = styled.header`
     grid-area: header;
     width: 100%;
     height: 116px;
@@ -15,7 +15,7 @@ export const Section = styled.header`
     align-items:center;
 `
 
-export const Container = styled.div`
+export const ContainerContent = styled.div`
     width: 80%;  
 
     display: flex;

@@ -1,9 +1,9 @@
-import { Brand, Container, Profile, Input, Section } from "./styles";
+import { Brand, Container, ContainerContent, Profile, Input, Section } from "./styles";
 
 export function Header(){
     return(
-        <Section>
-        <Container> 
+        <Container>
+        <ContainerContent> 
 
             <Brand>
              RocketMovies
@@ -24,7 +24,7 @@ export function Header(){
                 />
                    
             </Profile>
+        </ContainerContent>
         </Container>
-        </Section>
     )
 }
