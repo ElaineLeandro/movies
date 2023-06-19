@@ -1,4 +1,4 @@
-import { Brand, Container, ContainerContent, Profile, Input, Section } from "./styles";
+import { Brand, Container, ContainerContent, Profile, Input} from "./styles";
 
 export function Header(){
     return(
