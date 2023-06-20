@@ -20,8 +20,8 @@ export function NewMovies(){
           </NewMovie>
         <Form>
           <Input placeholder='Título'/>
-            <Input placeholder='Sua nota (de 0 a 5)'/>
-            <Textarea placeholder='Observações'/>                                  
+          <Input placeholder='Sua nota (de 0 a 5)'/>
+          <Textarea placeholder='Observações'/>                                  
           </Form>
 
       <ContainerButton>

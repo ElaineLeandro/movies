@@ -68,10 +68,11 @@ export const Form = styled.form`
 
 
 export const Input = styled.input`
-  width:907px;
+ 
   height: 55px;
 
   display: flex;
+  flex: 1;
   justify-content: center;
 
   border:none;
@@ -100,6 +101,8 @@ export const ButtonDelete = styled.button`
   color: ${({theme}) => theme.COLORS.PINKDARK};
   padding: 16px 250px;
   inline-size: max-content;
+  weight: 500;
+  font-size:16px;
 `
 
 export const ButtonSave = styled.button`
