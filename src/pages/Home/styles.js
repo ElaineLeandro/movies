@@ -9,9 +9,7 @@ export const Container = styled.div`
     "title buttonAddition"
     "package package";
     margin: 0 auto;
-   
- 
-
+    font-family:'Roboto Slab', serif;
 `
 export const Title = styled.title`
     grid-area: title; 

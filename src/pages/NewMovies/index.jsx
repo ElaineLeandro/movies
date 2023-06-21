@@ -1,7 +1,10 @@
 import { Header } from '../../components/Header'
 import { Textarea } from '../../components/TexTarea';
-import { Container,Form, LinkMovie, NewMovie,Input, ButtonDelete, ButtonSave, ContainerButton} from "./styles";
+import { Section } from '../../components/Section';
+import { ItemNew } from '../../components/ItemNew';
+import { Container,Form, LinkMovie, NewMovie, InputForm, ButtonDelete, ButtonSave, ContainerButton} from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
+
 
 
 export function NewMovies(){
@@ -19,10 +22,18 @@ export function NewMovies(){
              Novo filme
           </NewMovie>
         <Form>
-          <Input placeholder='Título'/>
-          <Input placeholder='Sua nota (de 0 a 5)'/>
+          <InputForm placeholder='Título'/>
+          <InputForm placeholder='Sua nota (de 0 a 5)'/>
           <Textarea placeholder='Observações'/>                                  
           </Form>
+
+        <Section title="Marcadores">
+          
+            <ItemNew value="teste"/>
+            <ItemNew isNew/>
+           
+          
+        </Section>
 
       <ContainerButton>
 

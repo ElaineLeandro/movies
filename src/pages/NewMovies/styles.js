@@ -2,6 +2,7 @@ import styled from  'styled-components'
 
 export const Container= styled.div`
     width: 82%;
+    font-family:'Roboto Slab', serif;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -16,6 +17,7 @@ export const Container= styled.div`
     overflow-y: auto;
     height: 50vh;
     padding:24px;
+    font-family: 'Roboto Slab';
 
     scrollbar-color: #FF859B transparent;
 
@@ -33,6 +35,11 @@ export const Container= styled.div`
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
     border-radius: 3px;
     }
+    .tags{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+  }
 `; 
 
 
@@ -67,7 +74,7 @@ export const Form = styled.form`
 `;
 
 
-export const Input = styled.input`
+export const InputForm = styled.input`
  
   height: 55px;
 
@@ -115,4 +122,5 @@ export const ButtonSave = styled.button`
   color: ${({theme}) => theme.COLORS.BACKGROUND_800};
   padding: 16px 250px;
   inline-size: max-content;
+  font-size:16px;
 `

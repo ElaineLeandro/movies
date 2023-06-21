@@ -1,33 +1,20 @@
-import {ContainerProfile,Form,Avatar} from './styles'
-import { BiArrowBack,BiCamera, BiUser, BiLock,BiVoicemail} from 'react-icons/bi';
+import {ContainerProfile,Form} from './styles'
+import { BiArrowBack,BiCamera, BiUser, BiLock,BiEnvelope} from 'react-icons/bi';
 import { Input } from '../../components/Input'
+import { Button } from '../../components/Button'
 
 export function Profile(){
     return(
         <ContainerProfile>
             <header>
-                    <BiArrowBack color="#FF859B" size={24}/>
+               <BiArrowBack color="#FF859B" size={24}/>
                 <a href="/">
                     Voltar
                 </a>
             </header>
-
-            <Form>
-            <Avatar>
-                <img src="https://github.com/ElaineLeandro.png" 
-                alt="Foto do usuário"/>
-
-                <label htmlFor="avatar">
-                    <BiCamera/>
-
-                    <input 
-                    id="avatar" 
-                    type="file"
-                    />
-                </label>
-            </Avatar>
-
-            <Input
+            
+       <Form>
+          <Input
           placeholder="Nome"
           type="text"
           icon={BiUser}
@@ -35,7 +22,7 @@ export function Profile(){
         <Input
           placeholder="E-mail"
           type="text"
-          icon={BiVoicemail}
+          icon={BiEnvelope}
         />
         <Input
           placeholder="Senha Atual"
@@ -50,8 +37,8 @@ export function Profile(){
         />
 
         <Button title="Salvar"/>
-
-            </Form>
+    
+      </Form>
 
             
         </ContainerProfile>
