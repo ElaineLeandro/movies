@@ -14,6 +14,7 @@ export const Container= styled.div`
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_900};
     margin: 0 auto;
 
+    
     overflow-y: auto;
     height: 50vh;
     padding:24px;
@@ -35,11 +36,9 @@ export const Container= styled.div`
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
     border-radius: 3px;
     }
-    .tags{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap:wrap;
-  }
+
+
+
 `; 
 
 
@@ -89,6 +88,15 @@ export const InputForm = styled.input`
   background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
   color: ${({theme}) => theme.COLORS.GRAY_100};
 `
+
+export const Tags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  gap: 24px;
+`
+
 
 export const ContainerButton = styled.div`
   grid-area: button;

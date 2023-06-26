@@ -1,42 +1,37 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+    grid-area:newItem;
+    width:100%;
     display: flex;
     align-items: center;
+   
+    background-color: ${({theme, isNew}) => isNew ? "transparent" : theme.COLORS.BACKGROUND_901};
 
-    font-family: 'Roboto', sans-serif;
-    font-size:16px;
-    weight: 500;
-
-    background-color:${({theme, isNew})=> isNew ? "transparent" : theme.COLORS.BACKGROUND_901 };
-    color: ${({theme})=> theme.COLORS.GRAY_200};
-
-    /* border: ${({theme, isNew}) => isNew ? `1px dashed ${theme.COLORS.GRAY_300}` : "none"}; */
-    border: ${({theme,isNew}) => isNew ? `1px dashed ${theme.COLORS.GRAY_300} `: "none"};
+    border: ${({theme, isNew}) => isNew ? ` 1px dashed ${theme.COLORS.GRAY_300}` : "none" };
 
     margin-bottom: 8px;
-    border-bottom: 10px;
-    padding-right: 16px;
+    border-radius: 10px;
+    padding: 16px;
 
-    >button{
+    > button{
         border: none;
-        background:none;
+        background: none;
     }
 
-    >input{
+    > input{
         height: 56px;
         width: 100%;
 
         padding: 12px;
-        color: ${({theme}) => theme.COLORS.WHITE};
-        background: transparent;
+
+        background:transparent;
+        
 
         border: none;
 
-        &::placeholder{
-            color: ${({theme}) => theme.COLORS.GRAY_300}
-        }
-
+       &::placeholder{
+        color: red;
+       }
     }
-
 `

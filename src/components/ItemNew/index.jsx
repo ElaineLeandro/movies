@@ -9,7 +9,7 @@ export function ItemNew({isNew, value, onClick, ...rest}){
             <input
                 type="text"
                 value={value}
-                readOnly={isNew}
+                readOnly={!isNew}
                 {...rest}
             />
             <button
@@ -17,7 +17,7 @@ export function ItemNew({isNew, value, onClick, ...rest}){
                 onClick={onClick}
             >
                 
-                {isNew ? <BiPlus/> : <BiX/>}
+                {isNew ? <BiPlus color="#FF859B"/> : <BiX  color="#E73252"/>}
 
             </button>
         </Container>
