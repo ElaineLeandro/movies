@@ -70,6 +70,18 @@ export const Form = styled.form`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 40px;
+
+  .tags{
+    background: #0D0C0F;
+    display: flex;
+    flex-wrap:wrap !important;
+    padding: 16px;
+    border-radius:8px;
+    gap: 20px;
+
+    
+
+  };
 `;
 
 
@@ -89,13 +101,7 @@ export const InputForm = styled.input`
   color: ${({theme}) => theme.COLORS.GRAY_100};
 `
 
-export const Tags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 
-  gap: 24px;
-`
 
 
 export const ContainerButton = styled.div`

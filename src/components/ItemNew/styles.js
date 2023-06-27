@@ -2,11 +2,13 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     grid-area:newItem;
-    width:100%;
+    height: 56px;
     display: flex;
     align-items: center;
+    inline-size: max-content;
+
    
-    background-color: ${({theme, isNew}) => isNew ? "transparent" : theme.COLORS.BACKGROUND_901};
+    background-color: ${({theme, isNew}) => isNew ? "transparent" : theme.COLORS.BACKGROUND_700};
 
     border: ${({theme, isNew}) => isNew ? ` 1px dashed ${theme.COLORS.GRAY_300}` : "none" };
 
@@ -20,14 +22,17 @@ export const Container = styled.div`
     }
 
     > input{
-        height: 56px;
-        width: 100%;
+        
+       
+        width:113px;
+        inline-size: max-content;
+        
 
         padding: 12px;
 
         background:transparent;
+        color: white;
         
-
         border: none;
 
        &::placeholder{

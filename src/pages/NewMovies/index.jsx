@@ -2,7 +2,7 @@ import { Header } from '../../components/Header'
 import { Textarea } from '../../components/TexTarea';
 import { Section } from '../../components/Section';
 import { ItemNew } from '../../components/ItemNew';
-import { Container,Form, LinkMovie, NewMovie, Tags, InputForm, ButtonDelete, ButtonSave, ContainerButton} from "./styles";
+import { Container,Form, LinkMovie, NewMovie, InputForm, ButtonDelete, ButtonSave, ContainerButton} from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
 import { useState } from 'react';
 
@@ -45,13 +45,32 @@ export function NewMovies(){
           <Textarea placeholder='Observações'/>  
 
           <Section title="Marcadores">
-            <Tags>
+            <div className= "tags">
             <ItemNew value="react"/>
             <ItemNew isNew placeholder="Novo marcador"/>
-            </Tags>
+            <ItemNew value="react"/>
+            <ItemNew isNew placeholder="Novo marcador"/>
+            <ItemNew value="react"/>
+            <ItemNew isNew placeholder="Novo marcador"/>
+            <ItemNew value="react"/>
+            <ItemNew isNew placeholder="Novo marcador"/>
+            <ItemNew value="react"/>
+            <ItemNew isNew placeholder="Novo marcador"/>
+            <ItemNew value="react"/>
+            <ItemNew isNew placeholder="Novo marcador"/>
+            <ItemNew value="react"/>
+            <ItemNew isNew placeholder="Novo marcador"/>
+            <ItemNew value="react"/>
+            <ItemNew isNew placeholder="Novo marcador"/>
+            <ItemNew value="react"/>
+            <ItemNew isNew placeholder="Novo marcador"/>
+            
+            </div>
            
          
-          </Section>                                
+          </Section>     
+          
+                                     
           </Form>
 
 
