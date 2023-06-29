@@ -12,12 +12,13 @@ export function ItemNew({isNew, value, onClick, ...rest}){
                 readOnly={!isNew}
                 {...rest}
             />
+            
             <button
                 type="button"
                 onClick={onClick}
             >
-                
-                {isNew ? <BiPlus color="#FF859B"/> : <BiX  color="#E73252"/>}
+                {/* <ItemNewIcon isNew={isNew} /> */}
+                {isNew ? <BiPlus color="#FF859B" size={24}/> : <BiX  color="#E73252" size={24}/>}
 
             </button>
         </Container>

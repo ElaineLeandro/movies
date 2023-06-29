@@ -6,15 +6,16 @@ import { ThemeProvider } from 'styled-components'
 import Global from './styles/global'
 import { NewMovies } from './pages/NewMovies'
 import { MoviePreview } from './pages/MoviePreview'
+import { Profile} from './pages/Profile'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Global/>
-      <NewMovies />
+      {/* <Profile /> */}
       
-      {/* <MoviePreview/> */}
+      <MoviePreview/>
     </ThemeProvider>
   </React.StrictMode>
 )

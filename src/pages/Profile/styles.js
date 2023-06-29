@@ -29,10 +29,31 @@ export const Form = styled.form`
 
     width: 100%;
     max-width: 340px;
-    margin: 0 auto;
+    margin: 30px auto 0;
     background-color: blue;
-    
 
+    > div:nth-child(4){
+    margin-top: 24px;
+  }
+
+`
+
+export const Avatar = styled.div`
+  position: relative;
+  margin: -120px auto 32px;
+  width:186px;
+  height:186px;
+
+  img{
+    width:186px;
+    height:186px;
+    border-radius:50%;
+  }
+
+  >label{
+    width: 48px;
+    
+  }
 `
 
 

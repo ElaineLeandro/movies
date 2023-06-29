@@ -1,5 +1,5 @@
-import {ContainerProfile,Form} from './styles'
-import { BiArrowBack,BiCamera, BiUser, BiLock,BiEnvelope} from 'react-icons/bi';
+import {ContainerProfile,Form, Avatar} from './styles'
+import { BiArrowBack, BiCamera, BiUser, BiLock,BiEnvelope} from 'react-icons/bi';
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 
@@ -14,6 +14,18 @@ export function Profile(){
             </header>
             
        <Form>
+          <Avatar>
+            <img src="https://github.com/ElaineLeandro.png" alt="Avatar do usúario" />
+            <label htmlFor="avatar">
+            <BiCamera/>
+
+              <input
+                id="avatar"
+                type="file"
+              />
+            </label>
+
+          </Avatar>
           <Input
           placeholder="Nome"
           type="text"

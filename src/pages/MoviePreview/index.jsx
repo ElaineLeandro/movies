@@ -1,15 +1,22 @@
-import { Container } from "./styles";
+import { Container, Content} from "./styles";
 import { Header } from "../../components/Header";
-import { Button } from "../../components/Button";
+import {BiArrowBack} from "react-icons/bi"
 
 export function MoviePreview(){
     return(
         <>
             <Header/>
             <Container>
-                <h1>Interestellar</h1>
+            <Content>
+            <BiArrowBack color="#FF859B" size={24}/>  
+              Voltar
+            </Content>
+            
+            <Movie>
+                
+            </Movie>
+                
 
-                <Button type="Salvar"/>
              </Container>
         </>
        

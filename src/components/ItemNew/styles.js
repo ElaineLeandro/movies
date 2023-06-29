@@ -4,8 +4,8 @@ export const Container = styled.div`
     grid-area:newItem;
     height: 56px;
     display: flex;
-    align-items: center;
-    inline-size: max-content;
+    /* align-items: center; */
+    /* inline-size: max-content; */
 
    
     background-color: ${({theme, isNew}) => isNew ? "transparent" : theme.COLORS.BACKGROUND_700};
@@ -24,8 +24,8 @@ export const Container = styled.div`
     > input{
         
        
-        width:113px;
-        inline-size: max-content;
+        /* width:113px; */
+        /* inline-size: max-content; */
         
 
         padding: 12px;
@@ -40,3 +40,5 @@ export const Container = styled.div`
        }
     }
 `
+
+// export const ItemNewIcon = styled.
