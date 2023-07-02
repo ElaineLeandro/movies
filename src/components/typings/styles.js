@@ -33,8 +33,8 @@ export const Star = styled.div`
     
         width: 12px;
         height: 12px;
-        color: ${({theme})=> theme.COLORS.PINK};
-        background-color: ${({theme})=> theme.COLORS.PINK_200};
+        color: ${({theme})=> theme.COLORS.CYAN_400};
+        background-color: ${({theme})=> theme.COLORS.CYAN_400};
         
     }
 

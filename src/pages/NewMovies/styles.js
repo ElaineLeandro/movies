@@ -28,7 +28,7 @@ export const Container= styled.div`
     }
    
     &::-webkit-scrollbar-thumb {
-      background-color: ${({theme})=> theme.COLORS.PINK};
+      background-color: ${({theme})=> theme.COLORS.CYAN_400};
       border-radius: 10px;
       height: 10px;
     }
@@ -51,7 +51,7 @@ export const LinkMovie = styled.div`
   margin-bottom:24px;
 
   >a{
-  color: ${({theme})=> theme.COLORS.PINKDARK};
+  color: ${({theme})=> theme.COLORS.CYAN_500};
   }
 `;
 
@@ -119,7 +119,7 @@ export const ButtonDelete = styled.button`
   border: none;
   border-radius: 10px;
   background-color: ${({theme}) => theme.COLORS.BACKGROUND_901};
-  color: ${({theme}) => theme.COLORS.PINKDARK};
+  color: ${({theme}) => theme.COLORS.CYAN_500};
   padding: 16px 250px;
   inline-size: max-content;
   weight: 500;
@@ -132,7 +132,7 @@ export const ButtonSave = styled.button`
   height: 56px;
   border: none;
   border-radius: 10px;
-  background-color: ${({theme}) => theme.COLORS.PINKDARK};
+  background-color: ${({theme}) => theme.COLORS.CYAN_500};
   color: ${({theme}) => theme.COLORS.BACKGROUND_800};
   padding: 16px 250px;
   inline-size: max-content;

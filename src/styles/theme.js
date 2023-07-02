@@ -12,9 +12,9 @@ export default{
         GRAY_300: "#999591",
         GRAY_400: "#948F99", 
 
-        PINK: "#E73252",
+        CYAN_400: "#22d3ee",
         WHITE: "#FFFFFF",
-        PINKDARK:'#FF859B'
+        CYAN_500:'#06b6d4'
 
     }
 }

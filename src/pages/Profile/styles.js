@@ -18,7 +18,7 @@ export const ContainerProfile =  styled.div`
         background-color:${({theme})=> theme.COLORS.BACKGROUND_901};
 
       a{
-        color:${({theme})=> theme.COLORS.PINKDARK};
+        color:${({theme})=> theme.COLORS.CYAN_500};
         font-size:24px;
       }
       

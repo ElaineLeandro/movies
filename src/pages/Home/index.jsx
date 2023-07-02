@@ -3,7 +3,7 @@ import { Package, Container, Title} from "./styles";
 import { ButtonAddition } from "../../components/ButtonAddition";
 import { Header } from "../../components/Header";
 import { Card} from "../../components/Card";
-import { BiArrowBack } from 'react-icons/bi';
+
 
 export function Home(){
  

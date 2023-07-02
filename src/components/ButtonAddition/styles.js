@@ -14,7 +14,7 @@ export const Container = styled.button`
    
     border: none;
     border-radius: 8px;
-    background-color: ${({ theme}) => theme.COLORS.PINKDARK};
+    background-color: ${({ theme}) => theme.COLORS.CYAN_500};
     color: ${({ theme }) => theme.COLORS. BACKGROUND_900};
     padding: 32px;
     cursor: pointer;

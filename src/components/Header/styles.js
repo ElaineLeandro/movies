@@ -25,7 +25,7 @@ export const ContainerContent = styled.div`
 `
 export const  Brand = styled.h1`
     font-size: 24px;
-    color: ${({theme}) => theme.COLORS.PINK};
+    color: ${({theme}) => theme.COLORS.CYAN_400};
     text-align: center;  
 `
 

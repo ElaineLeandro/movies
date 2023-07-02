@@ -40,7 +40,7 @@ export const Package = styled.div`
     overflow-y: auto;
     height: 50vh;
 
-    scrollbar-color: #FF859B transparent;
+    scrollbar-color: #22d3ee transparent;
 
     &::-webkit-scrollbar {
       width: 10px;
@@ -48,7 +48,7 @@ export const Package = styled.div`
     }
    
     &::-webkit-scrollbar-thumb {
-      background-color: ${({theme})=> theme.COLORS.PINK};
+      background-color: ${({theme})=> theme.COLORS.CYAN_400};
       border-radius: 10px;
       height: 10px;
     }
