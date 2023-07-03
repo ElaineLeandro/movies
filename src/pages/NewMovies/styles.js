@@ -20,7 +20,7 @@ export const Container= styled.div`
     padding:24px;
     font-family: 'Roboto Slab';
 
-    scrollbar-color: #FF859B transparent;
+    scrollbar-color: #22d3ee transparent;
 
     &::-webkit-scrollbar {
       width: 10px;

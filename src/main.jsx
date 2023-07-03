@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Global/>
       {/* <Profile /> */}
       
-      <MoviePreview/>
+      <NewMovies/>
     </ThemeProvider>
   </React.StrictMode>
 )
