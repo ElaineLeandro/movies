@@ -20,14 +20,13 @@ export const GroupImge = styled.div`
 `
 
 export const Form = styled.div`
-    padding: 0 136px;
+    padding: 0 163px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     
-
-    > div:nth-child(0){
+    > div:nth-child(6){
     margin-bottom: 24px;
     }
 
@@ -43,26 +42,30 @@ export const Form = styled.div`
     }
 
     >p{
+        
     font-size:16px;
     color: ${({theme})=> theme.COLORS.GRAY_101};
     } 
 
-    > button{
+    >button{
         color: ${({theme})=> theme.COLORS.BACKGROUND_800};
-
-        :hover !important{
-            background: ${({theme})=> theme.COLORS.CYAN_400};
+        :hover{
+            background: ${({theme})=> theme.COLORS.CYAN_500};
         }
     
     }
 
     >a{
+        display:flex;
+        justify-content:center;
+        align-items:end;
+        gap:6px;
         margin-top:42px;
-        text-align: center;
-        color: ${({theme})=> theme.COLORS.CYAN_400};
-
+        font-size:16px;
+        
         :hover{
-            color:#00AEED;
+            color: #00AEED;
         }
+        
     }
 `
