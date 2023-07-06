@@ -127,12 +127,5 @@ export const Description = styled.p`
 grid-area: description;
 display: flex;
 flex-direction: column;
-
->p{
-  margin-top:10px;
-}
-
-
- 
  
 `

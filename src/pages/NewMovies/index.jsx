@@ -5,12 +5,14 @@ import { ItemNew } from '../../components/ItemNew';
 import { Container,Form, LinkMovie, NewMovie, InputForm, ButtonDelete, ButtonSave, ContainerButton} from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
 import { useState } from 'react';
-
+import { useTagList } from '../../hooks/useTagList/useTagList';
 
 
 export function NewMovies(){
 
   const [valueIpunt, setValueInput] = useState('');
+  const [tagInput, setTagInput] = useState('');
+  const {tagList, addTag} = useTagList();
 
   const handleChange = (event) => {
     setValueInput(event.target.value);
@@ -46,6 +48,12 @@ export function NewMovies(){
 
           <Section title="Marcadores">
             <div className= "tags">
+              {tagList.map((tag, index) =>(<ItemNew value={tag} key={index}/>))}
+            <ItemNew 
+              value={tagInput}
+              onChange={event => setTagInput(event.target.value) }
+              isNew placeholder="Novo marcador"/>
+            {/* <ItemNew value="react"/>
             <ItemNew value="react"/>
             <ItemNew isNew placeholder="Novo marcador"/>
             <ItemNew value="react"/>
@@ -61,9 +69,7 @@ export function NewMovies(){
             <ItemNew value="react"/>
             <ItemNew isNew placeholder="Novo marcador"/>
             <ItemNew value="react"/>
-            <ItemNew isNew placeholder="Novo marcador"/>
-            <ItemNew value="react"/>
-            <ItemNew isNew placeholder="Novo marcador"/>
+            <ItemNew isNew placeholder="Novo marcador"/> */}
             
             </div>
            
@@ -81,7 +87,9 @@ export function NewMovies(){
           Excluir filme
         </ButtonDelete>
 
-        <ButtonSave>
+        <ButtonSave
+         onClick={()=> addTag(tagInput)}
+        >
           Salvar Filme
         </ButtonSave>   
         
