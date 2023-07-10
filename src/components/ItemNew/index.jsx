@@ -4,6 +4,8 @@ import { Container } from './styles'
 
 
 export function ItemNew({isNew, value, onClick, ...rest}){
+
+    
     return(
         <Container isNew={isNew} >
             <input
@@ -17,7 +19,6 @@ export function ItemNew({isNew, value, onClick, ...rest}){
                 type="button"
                 onClick={onClick}
             >
-                {/* <ItemNewIcon isNew={isNew} /> */}
                 {isNew ? <BiPlus color="#FF859B" size={24}/> : <BiX  color="#E73252" size={24}/>}
 
             </button>

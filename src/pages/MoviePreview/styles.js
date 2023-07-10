@@ -123,9 +123,12 @@ export const Tags = styled.div`
   font-family: 'Roboto';
 `
 
-export const Description = styled.p`
+export const ContentDescription = styled.div`
 grid-area: description;
+
+`
+
+export const Description = styled.p`
 display: flex;
-flex-direction: column;
- 
+flex-direction: column; 
 `

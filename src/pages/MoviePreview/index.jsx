@@ -1,4 +1,4 @@
-import { Container, Content, ContentTitle,Icon,Tags, ContentDateTime, Description} from "./styles";
+import { Container, Content, ContentTitle,Icon,Tags, ContentDateTime, ContentDescription, Description} from "./styles";
 import { Header } from "../../components/Header";
 import {BiArrowBack, BiTime} from "react-icons/bi"
 import { ImStarFull,ImStarEmpty} from "react-icons/im";
@@ -49,26 +49,27 @@ export function MoviePreview({Icon: icon}){
                 tag="Famila"
                 />
                 </Tags>
-
-                <p>
-                
-                Um dos aspectos mais interessantes do filme é que ele conta a mesma narrativa a partir de vários pontos de vista. 
-                Embora August seja o protagonista, conseguimos perceber que o enredo afeta todos à sua volta: a mãe que parou de trabalhar, a irmã que não tem atenção, etc.
-                Isso nos ajuda a perceber que cada história tem, pelo menos, duas versões. Na visão de Auggie, Jack fingiu ser seu amigo, mas nunca gostou dele.
-                Quando assistimos à sua versão dos fatos, percebemos que ele também era discriminado por ter menos dinheiro que os colegas e que estava tentando 
-                se "enturmar" quando fez piadas sobre o garoto novo.
+            <ContentDescription>
+                <Description>
+          
+                    Um dos aspectos mais interessantes do filme é que ele conta a mesma narrativa a partir de vários pontos de vista. 
+                    Embora August seja o protagonista, conseguimos perceber que o enredo afeta todos à sua volta: a mãe que parou de trabalhar, a irmã que não tem atenção, etc.
+                    Isso nos ajuda a perceber que cada história tem, pelo menos, duas versões. Na visão de Auggie, Jack fingiu ser seu amigo, mas nunca gostou dele.
+                    Quando assistimos à sua versão dos fatos, percebemos que ele também era discriminado por ter menos dinheiro que os colegas e que estava tentando 
+                    se "enturmar" quando fez piadas sobre o garoto novo.
+                </Description>
+                <Description>
+                    Na escola, a turma está estudando preceitos e reflete sobre a antiga citação egípcia: “seus feitos são seus monumentos”.
+                    Ela significa que aquilo que mais importa, e o motivo pelo qual somos lembrados, são as ações que praticamos.
+                    Mais do que aquilo que pensamos ou dizemos, é o que fazemos pelos outros que pode transformar o mundo.
+                    Auggie está totalmente isolado dos colegas e sofre bullying de um deles, Julian. Na prova de Ciências, percebe que Jack Will,
+                    o colega do lado, não sabe as respostas edá cola para ele: desse ato nasce uma amizade. Mais para a frente, Auggie escuta Jack
+                    falando mal dele com o resto da classe e fica sozinho de novo.
+                </Description>
+            </ContentDescription>
             
-                </p>
-
-            <p>
+           
             
-             Na escola, a turma está estudando preceitos e reflete sobre a antiga citação egípcia: “seus feitos são seus monumentos”.
-            Ela significa que aquilo que mais importa, e o motivo pelo qual somos lembrados, são as ações que praticamos.
-            Mais do que aquilo que pensamos ou dizemos, é o que fazemos pelos outros que pode transformar o mundo.
-            Auggie está totalmente isolado dos colegas e sofre bullying de um deles, Julian. Na prova de Ciências, percebe que Jack Will,
-            o colega do lado, não sabe as respostas edá cola para ele: desse ato nasce uma amizade. Mais para a frente, Auggie escuta Jack
-            falando mal dele com o resto da classe e fica sozinho de novo.
-            </p>
            
             </Container>
         </>

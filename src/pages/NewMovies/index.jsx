@@ -14,6 +14,13 @@ export function NewMovies(){
   const [tagInput, setTagInput] = useState('');
   const {tagList, addTag} = useTagList();
 
+  function handleAddTag() {
+    if (tagInput !== '') {
+      addTag(tagInput);
+      setTagInput('');
+    }
+  }
+
   const handleChange = (event) => {
     setValueInput(event.target.value);
   };
@@ -52,6 +59,7 @@ export function NewMovies(){
             <ItemNew 
               value={tagInput}
               onChange={event => setTagInput(event.target.value) }
+              onClick={handleAddTag}
               isNew placeholder="Novo marcador"/>
             {/* <ItemNew value="react"/>
             <ItemNew value="react"/>
@@ -88,7 +96,7 @@ export function NewMovies(){
         </ButtonDelete>
 
         <ButtonSave
-         onClick={()=> addTag(tagInput)}
+        //  onClick={()=> addTag(tagInput)}
         >
           Salvar Filme
         </ButtonSave>   
