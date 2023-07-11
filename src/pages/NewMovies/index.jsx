@@ -12,13 +12,22 @@ export function NewMovies(){
 
   const [valueIpunt, setValueInput] = useState('');
   const [tagInput, setTagInput] = useState('');
-  const {tagList, addTag} = useTagList();
+  const {tagList, addTag, removeTag} = useTagList('');
 
-  function handleAddTag() {
-    if (tagInput !== '') {
+  function handleAddTag(){
+    if (tagInput !== '' || tagInput == tagInput){
       addTag(tagInput);
       setTagInput('');
     }
+
+  }
+ 
+
+
+
+  function handleRemoveTag(tag) {
+    removeTag(tag);
+    console.log("A Magica acontece",removeTag(tag))
   }
 
   const handleChange = (event) => {
@@ -55,7 +64,7 @@ export function NewMovies(){
 
           <Section title="Marcadores">
             <div className= "tags">
-              {tagList.map((tag, index) =>(<ItemNew value={tag} key={index}/>))}
+              {tagList.map((tag, index) =>(<ItemNew value={tag} key={index} onClick={()=>handleRemoveTag(tag)}/>))}
             <ItemNew 
               value={tagInput}
               onChange={event => setTagInput(event.target.value) }
