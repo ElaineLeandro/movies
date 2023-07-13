@@ -84,6 +84,14 @@ export const Form = styled.form`
   };
 `;
 
+export const WrapUp = styled.div`
+  display: columns;
+
+  .error-message{
+    color:blue;
+  }
+ 
+`
 
 export const InputForm = styled.input`
  
