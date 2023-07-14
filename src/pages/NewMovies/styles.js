@@ -85,10 +85,13 @@ export const Form = styled.form`
 `;
 
 export const WrapUp = styled.div`
-  display: columns;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
 
   .error-message{
-    color:blue;
+    display: inline-block;
+    color:red;
   }
  
 `

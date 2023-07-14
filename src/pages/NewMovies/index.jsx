@@ -25,7 +25,7 @@ export function NewMovies(){
 
   function handleRemoveTag(tag) {
     removeTag(tag);
-    console.log("A Magica acontece",removeTag(tag))
+    // console.log("A Magica acontece",removeTag(tag))
   }
 
   function handleChange(event){
