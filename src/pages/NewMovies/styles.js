@@ -67,8 +67,7 @@ export const NewMovie = styled.title`
 export const Form = styled.form`
   grid-area: form;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 40px;
 
   .tags{
@@ -78,21 +77,26 @@ export const Form = styled.form`
     padding: 16px;
     border-radius:8px;
     gap: 20px;
-
-    
-
   };
 `;
 
 export const WrapUp = styled.div`
-  flex-wrap: wrap;
-  justify-content: space-between;
-  
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background: green;
+
+  .input-container{ 
+    display:flex;
+    flex-direction: column;
+    background: pink;
+  }
 
   .error-message{
-    display: inline-block;
-    color:red;
+    color: red;
+    margin-top: 5px;
   }
+
  
 `
 
@@ -101,15 +105,18 @@ export const InputForm = styled.input`
   height: 55px;
 
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   justify-content: center;
-
   border:none;
   border-radius: 10px;
   padding: 18px 16px;
 
   background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
   color: ${({theme}) => theme.COLORS.GRAY_100};
+
+  &.error-input {
+    border-color: red;
+  }
 `
 
 

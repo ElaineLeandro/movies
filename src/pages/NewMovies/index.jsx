@@ -60,17 +60,26 @@ export function NewMovies(){
           <WrapUp>
             <InputForm 
               placeholder='Título'
-            />
-            <InputForm 
-              placeholder='Sua nota (de 0 a 5)'
-              type="number"
+              type="text"
               min={0}
-              max={5}
+              max={50}
               value={valueIpunt}
               onChange={handleChange}
               className={validationFailed ? 'error-input' : ''}
+
             />
-            {validationFailed && <span className="error-message">{error}</span>}
+            <div className='input-container'>
+              <InputForm 
+                placeholder='Sua nota (de 0 a 5)'
+                type="number"
+                min={0}
+                max={5}
+                value={valueIpunt}
+                onChange={handleChange}
+                className={validationFailed ? 'error-input' : ''}
+              />
+              {validationFailed && <span className="error-message">{error}</span>}
+            </div>
           </WrapUp>
 
           <Textarea placeholder='Observações'/>  
