@@ -62,11 +62,10 @@ export function NewMovies(){
               placeholder='Título'
               type="text"
               min={0}
-              max={50}
+              max={10}
               value={valueIpunt}
               onChange={handleChange}
               className={validationFailed ? 'error-input' : ''}
-
             />
             <div className='input-container'>
               <InputForm 

@@ -82,8 +82,6 @@ export const Form = styled.form`
 
 export const WrapUp = styled.div`
   display:flex;
-  justify-content:space-between;
-  align-items:center;
   background: green;
 
   .input-container{ 
@@ -101,11 +99,11 @@ export const WrapUp = styled.div`
 `
 
 export const InputForm = styled.input`
- 
+  width: 100%;
   height: 55px;
 
   display: flex;
-  /* flex: 1; */
+  flex: 1;
   justify-content: center;
   border:none;
   border-radius: 10px;
