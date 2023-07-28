@@ -1,8 +1,9 @@
-import { Container, Content, ContentTitle,Icon,Tags, ContentDateTime, ContentDescription, Description} from "./styles";
 import { Header } from "../../components/Header";
+import { Tagging } from "../../components/Tagging";
+
+import { Container, Content, ContentTitle,Icon,Tags, ContentDateTime, ContentDescription, Description} from "./styles";
 import {BiArrowBack, BiTime} from "react-icons/bi"
 import { ImStarFull,ImStarEmpty} from "react-icons/im";
-import { Tagging } from "../../components/Tagging";
 
 
 export function MoviePreview({Icon: icon}){

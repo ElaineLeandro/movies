@@ -58,15 +58,15 @@ export function NewMovies(){
           </NewMovie>
         <Form>
           <WrapUp>
+            <div>
             <InputForm 
               placeholder='Título'
               type="text"
-              min={0}
-              max={10}
               value={valueIpunt}
               onChange={handleChange}
               className={validationFailed ? 'error-input' : ''}
             />
+            </div>
             <div className='input-container'>
               <InputForm 
                 placeholder='Sua nota (de 0 a 5)'

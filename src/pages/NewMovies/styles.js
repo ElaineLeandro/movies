@@ -68,6 +68,7 @@ export const Form = styled.form`
   grid-area: form;
   display: flex;
   flex-direction: column;
+ 
   gap: 40px;
 
   .tags{
@@ -82,12 +83,13 @@ export const Form = styled.form`
 
 export const WrapUp = styled.div`
   display:flex;
-  background: green;
+  justify-content: space-between;
+  background: blue;
 
   .input-container{ 
     display:flex;
     flex-direction: column;
-    background: pink;
+    /* background: pink; */
   }
 
   .error-message{
@@ -99,11 +101,10 @@ export const WrapUp = styled.div`
 `
 
 export const InputForm = styled.input`
-  width: 100%;
   height: 55px;
 
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   justify-content: center;
   border:none;
   border-radius: 10px;
