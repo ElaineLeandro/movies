@@ -1,11 +1,13 @@
 import {Container} from './styles'
 import { BiPlus } from 'react-icons/bi';
 
-export function ButtonAddition(){
+
+export function LinkAddition({to, text}){
     return(
-        <Container>
-            < BiPlus/>
-            Adicionar filme 
+        <Container to={to}> 
+            < BiPlus />
+            {text}
+
         </Container>
     )
 }

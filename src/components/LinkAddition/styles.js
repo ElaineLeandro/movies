@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-export const Container = styled.button`
+export const Container = styled(Link)`
     width: 207px;
     height: 48px;
     
     display:flex;
     align-items: center;
     justify-content: center;
-    grid-area: buttonAddition;
+    grid-area: linkaddition;
 
     font-size: 16px;
     weight: 400;

@@ -1,8 +1,9 @@
 
 import { Package, Container, Title} from "./styles";
-import { ButtonAddition } from "../../components/ButtonAddition";
+import { LinkAddition } from "../../components/LinkAddition";
 import { Header } from "../../components/Header";
 import { Card} from "../../components/Card";
+
 
 
 export function Home(){
@@ -13,7 +14,12 @@ export function Home(){
         <Container>
             <Title>
             Meus filmes 
-           <ButtonAddition/>
+          <LinkAddition 
+            to="/newmovies" 
+            text="Adicionar"
+          />
+
+        
           
             </Title>
            

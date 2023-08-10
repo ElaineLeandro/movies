@@ -6,6 +6,7 @@ import { Container,Form, LinkMovie, NewMovie,WrapUp, InputForm, ButtonDelete, Bu
 import { BiArrowBack } from 'react-icons/bi';
 import { useState } from 'react';
 import { useTagList } from '../../hooks/useTagList/useTagList';
+import { Link } from 'react-router-dom';
 
 
 export function NewMovies(){
@@ -51,7 +52,7 @@ export function NewMovies(){
 
         <LinkMovie>
           <BiArrowBack color="#FF859B" size={16}/>  
-          <a href="/">Voltar</a>
+          <Link to= "/">Voltar</Link>
         </LinkMovie>
           <NewMovie>
              Novo filme
