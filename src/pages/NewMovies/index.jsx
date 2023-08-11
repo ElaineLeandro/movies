@@ -2,7 +2,7 @@ import { Header } from '../../components/Header'
 import { Textarea } from '../../components/TexTarea';
 import { Section } from '../../components/Section';
 import { ItemNew } from '../../components/ItemNew';
-import { Container,Form, LinkMovie, NewMovie,WrapUp, InputForm, ButtonDelete, ButtonSave, ContainerButton} from "./styles";
+import { Container,Form, LinkMovie, NewMovie,WrapUp, InputForm, ButtonDelete, ButtonSave, ContainerButton, PackageInt,PackageInN  } from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
 import { useState } from 'react';
 import { useTagList } from '../../hooks/useTagList/useTagList';
@@ -59,49 +59,47 @@ export function NewMovies(){
           </NewMovie>
         <Form>
           <WrapUp>
-            <div>
-            <InputForm 
-              placeholder='Título'
-              type="text"
-              value={valueIpunt}
-              onChange={handleChange}
-              className={validationFailed ? 'error-input' : ''}
-            />
-            </div>
-            <div className='input-container'>
+            <PackageInt>
+                <InputForm 
+                  placeholder='Título'
+                  type="text"
+                  value={valueIpunt}
+                  onChange={handleChange}
+                  className={validationFailed ? 'error-input' : ''}
+                />
+            </PackageInt>
+            <PackageInN>
               <InputForm 
-                placeholder='Sua nota (de 0 a 5)'
-                type="number"
-                min={0}
-                max={5}
-                value={valueIpunt}
-                onChange={handleChange}
-                className={validationFailed ? 'error-input' : ''}
-              />
+                  placeholder='Sua nota (de 0 a 5)'
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={valueIpunt}
+                  onChange={handleChange}
+                  className={validationFailed ? 'error-input' : ''}
+                />
               {validationFailed && <span className="error-message">{error}</span>}
-            </div>
+            </PackageInN>
           </WrapUp>
 
           <Textarea placeholder='Observações'/>  
 
           <Section title="Marcadores">
             <div className= "tags">
-              {tagList.map((tag, index) =>(<ItemNew value={tag} key={index} onClick={()=>handleRemoveTag(tag)}/>))}
+              {tagList.map((tag, index) =>(
+                <ItemNew 
+                  value={tag} 
+                  key={index} 
+                  onClick={()=>handleRemoveTag(tag)}/>))
+              }
             <ItemNew 
               value={tagInput}
               onChange={event => setTagInput(event.target.value) }
               onClick={handleAddTag}
               isNew placeholder="Novo marcador"/>
             </div>
-           
-         
-          </Section>     
-          
-                                     
-          </Form>
-
-
-
+          </Section>                      
+        </Form>
       <ContainerButton>
 
         <ButtonDelete>

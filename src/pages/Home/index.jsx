@@ -11,16 +11,14 @@ export function Home(){
     return(
         <>
         <Header/>
+
         <Container>
             <Title>
-            Meus filmes 
-          <LinkAddition 
-            to="/newmovies" 
-            text="Adicionar"
-          />
-
-        
-          
+                Meus filmes 
+                <LinkAddition 
+                    to="/newmovies" 
+                    text="Adicionar"
+                />
             </Title>
            
             <Package>

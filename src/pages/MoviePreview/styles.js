@@ -73,7 +73,7 @@ export const Icon = styled.div`
     >svg{
       width: 20px;
       height: 20px;
-      color: ${({theme})=> theme.COLORS.CYAN_400};
+      /* color: ${({theme})=> theme.COLORS.CYAN_400}; */
         
         
     };

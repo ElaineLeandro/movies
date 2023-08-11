@@ -13,7 +13,6 @@ export const Container= styled.div`
     "button button";
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_900};
     margin: 0 auto;
-
     
     overflow-y: auto;
     height: 50vh;
@@ -36,9 +35,6 @@ export const Container= styled.div`
     background-color: ${({theme})=> theme.COLORS.BACKGROUND_100};
     border-radius: 3px;
     }
-
-
-
 `; 
 
 
@@ -83,28 +79,36 @@ export const Form = styled.form`
 
 export const WrapUp = styled.div`
   display:flex;
-  justify-content: space-between;
-  background: blue;
-
+  gap: 40px;
   .input-container{ 
     display:flex;
     flex-direction: column;
-    /* background: pink; */
+    background: pink;
   }
 
   .error-message{
     color: red;
     margin-top: 5px;
   }
+`
+export const PackageInt = styled.div`
+  display: flex;
+  flex-direction: column;
+  width:100%;
 
- 
+`
+
+export const PackageInN = styled.div`
+  display: flex;
+  flex-direction: column;
+  width:100%;
+
 `
 
 export const InputForm = styled.input`
   height: 55px;
-
   display: flex;
-  /* flex: 1; */
+  flex: 1;
   justify-content: center;
   border:none;
   border-radius: 10px;
@@ -117,9 +121,6 @@ export const InputForm = styled.input`
     border-color: red;
   }
 `
-
-
-
 
 export const ContainerButton = styled.div`
   grid-area: button;
