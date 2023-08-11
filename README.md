@@ -4,6 +4,7 @@ Projeto desenvolvido durante a semana Spring React promovida pela institução R
 ## Implementações feitas
 
 - ajuste no layout pag newMovies  
+- Corrigir o icon no componente Card
   
 ## Implementações em andamento / Fazer
 - Correção bug ao adicionar os marcadores
