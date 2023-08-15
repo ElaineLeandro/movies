@@ -2,10 +2,10 @@ import {Container} from './styles'
 import { BiPlus } from 'react-icons/bi';
 
 
-export function LinkAddition({to, text}){
+export function LinkAddition({icone, to, text}){
     return(
         <Container to={to}> 
-            < BiPlus />
+            < BiPlus icon={icone} />
             {text}
 
         </Container>

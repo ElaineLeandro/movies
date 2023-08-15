@@ -9,4 +9,5 @@ Projeto desenvolvido durante a semana Spring React promovida pela institução R
 ## Implementações em andamento / Fazer
 - Correção bug ao adicionar os marcadores
 - Validação campos input e textarea 
+- Desafio transforma o icone do componente linnkAddition em uma props / deixar p icone prop adcional 
 
