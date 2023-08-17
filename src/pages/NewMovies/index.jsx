@@ -11,11 +11,14 @@ import { Link } from 'react-router-dom';
 
 export function NewMovies(){
 
-  const [valueIpunt, setValueInput] = useState('');
+  // const [valueIpunt, setValueInput] = useState('');
   const [tagInput, setTagInput] = useState('');
   const {tagList, addTag, removeTag} = useTagList('');
   const[error, setError] = useState('');
   const [validationFailed, setValidationFailed] = useState('');
+  const [title, setTitle] = useState('');
+  const [rating, setRating] = useState('');
+  const [odservations, setODServations] = useState('');
 
   function handleAddTag(){
     if (tagInput !== '' || tagInput == tagInput){
@@ -29,20 +32,45 @@ export function NewMovies(){
     // console.log("A Magica acontece",removeTag(tag))
   }
 
-  function handleChange(event){
-    const newValue = event.target.value
+  // function handleChange(event){
+  //   const newValue = event.target.value
 
-    if(/^\d{5}$/.test(newValue)){
-      setError("")
+  //   if(/^\d{5}$/.test(newValue)){
+  //     setError("")
       
-      setValidationFailed(false)
-    }else{
-      setError('O valor deve conter exatamente 5 caracteres numéricos.')
-      setValidationFailed(true)
-    }
+  //     setValidationFailed(false)
+  //   }else{
+  //     setError('O valor deve conter exatamente 5 caracteres numéricos.')
+  //     setValidationFailed(true)
+  //   }
 
-    setValueInput(newValue)
+  //   setValueInput(newValue)
+  // }
+
+  function handleTitleChange(event) {
+    const newTitle = event.target.value;
+
+    if(newTitle <= 100){
+      setTitle(newTitle);
+      setTitleError("")
+    }else{
+      setTitle('')
+      setTitleError("O nome do filme tem que conter maximo de 100 caracteres")
+    }
   }
+
+  function handleRatingChange(event){
+    const newRating = event.target.value;
+
+    if(newRating >= 0 && newRating <=5){
+      setRating(newRating);
+      setRatingError("")
+    }else{
+      setRating('')
+      setRatingError("A nota deve estar entre 0 e 5.")
+    }
+  }
+
 
   return(
     <>
@@ -63,9 +91,9 @@ export function NewMovies(){
                 <InputForm 
                   placeholder='Título'
                   type="text"
-                  value={valueIpunt}
+                  value={title}
                   onChange={handleChange}
-                  className={validationFailed ? 'error-input' : ''}
+                 
                 />
             </PackageInt>
             <PackageInN>
@@ -82,7 +110,15 @@ export function NewMovies(){
             </PackageInN>
           </WrapUp>
 
-          <Textarea placeholder='Observações'/>  
+          <Textarea
+           placeholder='Observações'
+           value={odservations}
+           onChange={event => {
+            if(event.target.value.length <= 300){
+              setODServations(event.target.value)
+            }
+           }}
+          />  
 
           <Section title="Marcadores">
             <div className= "tags">
