@@ -18,10 +18,7 @@ export function Home(){
                 <LinkAddition 
                     to="/newmovies" 
                     text="Adicionar"
-    
-                    icon="teste"
                    
-                    
                 />
              
             </Title>

@@ -11,14 +11,14 @@ import { Link } from 'react-router-dom';
 
 export function NewMovies(){
 
-  // const [valueIpunt, setValueInput] = useState('');
   const [tagInput, setTagInput] = useState('');
   const {tagList, addTag, removeTag} = useTagList('');
-  const[error, setError] = useState('');
-  const [validationFailed, setValidationFailed] = useState('');
-  const [title, setTitle] = useState('');
+  const [comment, setComment] = useState('')
+  const [commentError, setCommentError] = useState('')
   const [rating, setRating] = useState('');
-  const [odservations, setODServations] = useState('');
+  const [ratingError, setRatingError] = useState('');
+  const [observation, setObservation] = useState('');
+  const [observationError, setObservationError] = useState('')
 
   function handleAddTag(){
     if (tagInput !== '' || tagInput == tagInput){
@@ -47,29 +47,55 @@ export function NewMovies(){
   //   setValueInput(newValue)
   // }
 
-  function handleTitleChange(event) {
-    const newTitle = event.target.value;
-
-    if(newTitle <= 100){
-      setTitle(newTitle);
-      setTitleError("")
-    }else{
-      setTitle('')
-      setTitleError("O nome do filme tem que conter maximo de 100 caracteres")
+  function validateComment(){
+    console.log("Caiu Aqui!",comment)
+    if(comment.length === ''){
+      setCommentError('Este campo é obrigatório')
+    }else if( comment.length < 3){
+      setCommentError('O titulo deve ter no minimo 3 carcteres')
+    }else if(comment.length > 3){
+      setCommentError('')
     }
   }
 
+  function validateRating(event){
+    // const ratingMax = (event.target.value)
+   
+    if(rating === ''){
+      setRatingError('Este campo é obrigatório')
+    }else if( rating.length < 1){
+      setRatingError('A nota deve estar entre 0 e 5')
+    }else {
+      setRatingError('')
+    }
+  }
+
+
+  // function validateObservation(){
+  //   if(observation === ''){
+  //     setObservationError('Este campo é obrigatório')
+  //   }else if( observation.length > 300){
+  //     setObservationError('O comentário deve ter no máximo 300 carcteres')
+  //   }else{
+  //     setObservationError('')
+  //   }
+  // }
+
+  function handleCommentChange(event){
+    setComment(event.target.value)
+    validateComment() 
+  }
+  
   function handleRatingChange(event){
-    const newRating = event.target.value;
-
-    if(newRating >= 0 && newRating <=5){
-      setRating(newRating);
-      setRatingError("")
-    }else{
-      setRating('')
-      setRatingError("A nota deve estar entre 0 e 5.")
-    }
+    
+    setRating(event.target.value)
+    validateRating()
+    console.log("Caiu Aqui2" )
   }
+  // function handleObservationChange(event){
+  //   setObservation(event.target.value)
+  //   validateObservation() 
+  // }
 
 
   return(
@@ -91,10 +117,11 @@ export function NewMovies(){
                 <InputForm 
                   placeholder='Título'
                   type="text"
-                  value={title}
-                  onChange={handleChange}
-                 
+                  value={comment} 
+                  onChange={handleCommentChange}
+                  className={commentError ? 'error-input' : '' }
                 />
+                {commentError  && <span className="error-message">{commentError}</span>}
             </PackageInt>
             <PackageInN>
               <InputForm 
@@ -102,23 +129,24 @@ export function NewMovies(){
                   type="number"
                   min={0}
                   max={5}
-                  value={valueIpunt}
-                  onChange={handleChange}
-                  className={validationFailed ? 'error-input' : ''}
+                  maxLength={1}
+                  value={rating}
+                  onChange={handleRatingChange}
+                  className={ratingError? 'error-input' : ''}
+                  
                 />
-              {validationFailed && <span className="error-message">{error}</span>}
+              {ratingError  && <span className="error-message">{ratingError}</span>}
             </PackageInN>
           </WrapUp>
-
+{/* 
           <Textarea
            placeholder='Observações'
-           value={odservations}
-           onChange={event => {
-            if(event.target.value.length <= 300){
-              setODServations(event.target.value)
-            }
-           }}
-          />  
+           value={observation}
+           onChange={handleObservationChange} */}
+           
+          {/* //  className={observationError? 'error-input' : ''}
+          />   */}
+          {/* {observationError && <span className="error-message">{observationError}</span>} */}
 
           <Section title="Marcadores">
             <div className= "tags">
