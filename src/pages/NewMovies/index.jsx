@@ -46,8 +46,8 @@ export function NewMovies(){
   function validateObservation(){
     if(observation === ''){
       setObservationError('Este campo é obrigatório')
-    }else if( observation.length > 10){
-      setObservationError('O comentário deve ter no máximo 300 carcteres')
+    }else if( observation.length > 100){
+      setObservationError('O comentário deve ter no máximo 100 carcteres')
     }else{
       setObservationError('')
     }

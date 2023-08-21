@@ -6,7 +6,7 @@ import { Card} from "../../components/Card";
 
 
 
-export function Home(){
+export function Home({icon}){
  
     return(
         <>
@@ -18,6 +18,7 @@ export function Home(){
                 <LinkAddition 
                     to="/newmovies" 
                     text="Adicionar"
+                    icon={icon}
                    
                 />
              
