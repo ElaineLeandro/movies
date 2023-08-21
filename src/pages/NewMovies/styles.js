@@ -75,6 +75,10 @@ export const Form = styled.form`
     border-radius:8px;
     gap: 20px;
   };
+  .error-message{
+    color: red;
+    margin-top: 5px;
+  }
 `;
 
 export const WrapUp = styled.div`

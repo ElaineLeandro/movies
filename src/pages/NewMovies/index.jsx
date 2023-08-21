@@ -32,70 +32,49 @@ export function NewMovies(){
     // console.log("A Magica acontece",removeTag(tag))
   }
 
-  // function handleChange(event){
-  //   const newValue = event.target.value
-
-  //   if(/^\d{5}$/.test(newValue)){
-  //     setError("")
-      
-  //     setValidationFailed(false)
-  //   }else{
-  //     setError('O valor deve conter exatamente 5 caracteres numéricos.')
-  //     setValidationFailed(true)
-  //   }
-
-  //   setValueInput(newValue)
-  // }
-
   function validateComment(){
     console.log("Caiu Aqui!",comment)
     if(comment.length === ''){
       setCommentError('Este campo é obrigatório')
-    }else if( comment.length < 3){
+    }else if( comment.length < 3 ){
       setCommentError('O titulo deve ter no minimo 3 carcteres')
     }else if(comment.length > 3){
       setCommentError('')
     }
   }
 
-  function validateRating(event){
-    // const ratingMax = (event.target.value)
-   
-    if(rating === ''){
-      setRatingError('Este campo é obrigatório')
-    }else if( rating.length < 1){
-      setRatingError('A nota deve estar entre 0 e 5')
-    }else {
-      setRatingError('')
+  function validateObservation(){
+    if(observation === ''){
+      setObservationError('Este campo é obrigatório')
+    }else if( observation.length > 10){
+      setObservationError('O comentário deve ter no máximo 300 carcteres')
+    }else{
+      setObservationError('')
     }
   }
-
-
-  // function validateObservation(){
-  //   if(observation === ''){
-  //     setObservationError('Este campo é obrigatório')
-  //   }else if( observation.length > 300){
-  //     setObservationError('O comentário deve ter no máximo 300 carcteres')
-  //   }else{
-  //     setObservationError('')
-  //   }
-  // }
 
   function handleCommentChange(event){
     setComment(event.target.value)
     validateComment() 
   }
-  
-  function handleRatingChange(event){
+  function validateRating(event) {
+    const value = event.target.value;
     
-    setRating(event.target.value)
-    validateRating()
-    console.log("Caiu Aqui2" )
+    if (value === '') {
+      setRating('');
+      setRatingError('Este campo é obrigatório!');
+    } else if (isNaN(value) || value < 0 || value > 5) {
+      setRating('');
+      setRatingError('A classificação deve ser um número entre 0 e 5!');
+    } else {
+      setRating(value);
+      setRatingError('');
+    }
   }
-  // function handleObservationChange(event){
-  //   setObservation(event.target.value)
-  //   validateObservation() 
-  // }
+  function handleObservationChange(event){
+    setObservation(event.target.value)
+    validateObservation() 
+  }
 
 
   return(
@@ -118,7 +97,7 @@ export function NewMovies(){
                   placeholder='Título'
                   type="text"
                   value={comment} 
-                  onChange={handleCommentChange}
+                  onChange={(event) => handleCommentChange(event)}
                   className={commentError ? 'error-input' : '' }
                 />
                 {commentError  && <span className="error-message">{commentError}</span>}
@@ -131,22 +110,24 @@ export function NewMovies(){
                   max={5}
                   maxLength={1}
                   value={rating}
-                  onChange={handleRatingChange}
+                  onChange={(event) => validateRating(event)}
                   className={ratingError? 'error-input' : ''}
                   
                 />
               {ratingError  && <span className="error-message">{ratingError}</span>}
             </PackageInN>
           </WrapUp>
-{/* 
+
           <Textarea
+           type="text"
            placeholder='Observações'
            value={observation}
-           onChange={handleObservationChange} */}
+           onChange={handleObservationChange} 
            
-          {/* //  className={observationError? 'error-input' : ''}
-          />   */}
-          {/* {observationError && <span className="error-message">{observationError}</span>} */}
+           className={observationError? 'error-input' : ''}
+          /> 
+            {console.log(observationError)}  
+           {observationError && <span className="error-message">{observationError}</span>} 
 
           <Section title="Marcadores">
             <div className= "tags">
