@@ -3,10 +3,11 @@ import { Package, Container, Title} from "./styles";
 import { LinkAddition } from "../../components/LinkAddition";
 import { Header } from "../../components/Header";
 import { Card} from "../../components/Card";
+import { BiPlus } from "react-icons/bi";
 
 
 
-export function Home({icon}){
+export function Home(){
  
     return(
         <>
@@ -18,7 +19,7 @@ export function Home({icon}){
                 <LinkAddition 
                     to="/newmovies" 
                     text="Adicionar"
-                    icon={icon}
+                    icon={<BiPlus/>}
                    
                 />
              

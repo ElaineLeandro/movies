@@ -13,6 +13,19 @@ export function NewMovies(){
 
   const [tagInput, setTagInput] = useState('');
   const {tagList, addTag, removeTag} = useTagList('');
+  // const [form, setForm] = useState({ 
+  //   comment:"",
+  //   rating: "",
+  //   observation: ""
+
+  //  })
+  //  const [messageError, setMessageError] = useState({ 
+  //   comment:"",
+  //   rating: "",
+  //   observation: ""
+
+  //   /** setMessageError(oldError => ({...oldError, comment: 'O titulo deve ter no minimo 3 carcteres'}) )  */
+  //  })
   const [comment, setComment] = useState('')
   const [commentError, setCommentError] = useState('')
   const [rating, setRating] = useState('');
@@ -34,9 +47,9 @@ export function NewMovies(){
 
   function validateComment(){
     console.log("Caiu Aqui!",comment)
-    if(comment.length === ''){
-      setCommentError('Este campo é obrigatório')
-    }else if( comment.length < 3 ){
+    // if(comment.length === ''){
+    //   setCommentError('Este campo é obrigatório')
+    if( comment.length < 3 ){
       setCommentError('O titulo deve ter no minimo 3 carcteres')
     }else if(comment.length > 3){
       setCommentError('')
@@ -57,20 +70,50 @@ export function NewMovies(){
     setComment(event.target.value)
     validateComment() 
   }
-  function validateRating(event) {
-    const value = event.target.value;
-    
-    if (value === '') {
-      setRating('');
-      setRatingError('Este campo é obrigatório!');
-    } else if (isNaN(value) || value < 0 || value > 5) {
-      setRating('');
-      setRatingError('A classificação deve ser um número entre 0 e 5!');
-    } else {
-      setRating(value);
-      setRatingError('');
+
+  function handleRatingChange (e) {
+    const regex = /^[0-9\b]+$/;    
+    if (e.target.value === "" || regex.test(e.target.value)) { 
+      setRating(e.target.value);  
     }
-  }
+
+
+    // const value = event.target.value
+
+
+
+    // console.log("Pizza",value)
+    // if(!value){
+    //   setRatingError("Esse campo é obrigatorio!")
+    //   setRating('')
+    //   return 
+    // }
+    // const filteredValue = value.match(/[0-5]/g).join()
+    // setRating(filteredValue)
+    // console.log(filteredValue)
+   }
+
+  // function validateRating(event) {
+  //   const value = event.target.value;
+  //   const convertValue = Number(value)
+  //   console.log("CAIU BALÃO Number",convertValue)
+  //   if(!/^\d+$/.test(value)){
+  //     console.log("Mostra o Valor",value)
+  //     return 
+  //   }
+  //   console.log("Mostra O valor", value)
+  //   if (value === ' ') {
+  //     console.log("Caiu Aqui!",convertValue)
+  //     setRatingError('Este campo é obrigatório!');
+
+  //   } else if (convertValue < 0 || convertValue > 5) {
+  //     setRating('');
+  //     setRatingError('A classificação deve ser um número entre 0 e 5!');
+  //   } else {
+  //     setRating(value);
+  //     setRatingError('');
+  //   }
+  // }
   function handleObservationChange(event){
     setObservation(event.target.value)
     validateObservation() 
@@ -108,12 +151,14 @@ export function NewMovies(){
                   type="number"
                   min={0}
                   max={5}
-                  maxLength={1}
+                  maxlength={1}
+                  // pattern="[0-9]+"
                   value={rating}
-                  onChange={(event) => validateRating(event)}
+                  onChange={handleRatingChange}
                   className={ratingError? 'error-input' : ''}
                   
                 />
+                {rating}
               {ratingError  && <span className="error-message">{ratingError}</span>}
             </PackageInN>
           </WrapUp>
@@ -146,6 +191,7 @@ export function NewMovies(){
           </Section>                      
         </Form>
       <ContainerButton>
+
 
         <ButtonDelete>
           Excluir filme
