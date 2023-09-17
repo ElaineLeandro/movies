@@ -4,7 +4,7 @@ import { Section } from '../../components/Section';
 import { ItemNew } from '../../components/ItemNew';
 import { Container,Form, LinkMovie, NewMovie,WrapUp, InputForm, ButtonDelete, ButtonSave, ContainerButton, PackageInt,PackageInN  } from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import { useTagList } from '../../hooks/useTagList/useTagList';
 import { Link } from 'react-router-dom';
 
@@ -32,6 +32,7 @@ export function NewMovies(){
   const [ratingError, setRatingError] = useState('');
   const [observation, setObservation] = useState('');
   const [observationError, setObservationError] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   function handleAddTag(){
     if (tagInput !== '' || tagInput == tagInput){
@@ -71,14 +72,17 @@ export function NewMovies(){
     validateComment() 
   }
 
-  function handleRatingChange (e) {
-    const regex = /^[0-9\b]+$/;    
-    if (e.target.value === "" || regex.test(e.target.value)) { 
-      setRating(e.target.value);  
+  function handleRatingChange (e) { 
+    const regex = /^[0-9\b]+$/;
+    const valueInput = e.target.value
+    if (!valueInput === "" || (regex.test(valueInput) && valueInput >= 0 && valueInput <= 5)) { 
+        setRating(valueInput)
+        setRatingError("")
+    }else{
+      setRating("")
+      setRatingError("Esse campo é obrigatorio!")
     }
-
-
-    // const value = event.target.value
+      // const value = event.target.value
 
 
 
@@ -114,10 +118,41 @@ export function NewMovies(){
   //     setRatingError('');
   //   }
   // }
+
+  
   function handleObservationChange(event){
     setObservation(event.target.value)
     validateObservation() 
   }
+
+  function handleSubmit(e){
+    console.log("Entrou no submet!")
+
+    e.preventDefault();
+    if (commentError || ratingError || observationError || tagList.length === 0) {
+      // Não envie o formulário se houver erros de validação
+      return;
+    }
+    setIsSubmitting(true)
+
+    setIsSubmitting(false)
+  }
+
+  
+useEffect(()=>{
+  console.log("FomeZero!")
+  const storedFormData  = JSON.perse(localStorage.getItem("formData")) ||{
+    comment:'',
+    rating: '',
+    observation: '',
+    tagList: '',
+  }
+
+    setComment(storedFormData.comment)
+    setRating(storedFormData.rating)
+    setObservation(storedFormData.observation)
+    setTagList(storedFormData.tagList)
+}, [])
 
 
   return(
@@ -152,7 +187,6 @@ export function NewMovies(){
                   min={0}
                   max={5}
                   maxlength={1}
-                  // pattern="[0-9]+"
                   value={rating}
                   onChange={handleRatingChange}
                   className={ratingError? 'error-input' : ''}
@@ -189,21 +223,21 @@ export function NewMovies(){
               isNew placeholder="Novo marcador"/>
             </div>
           </Section>                      
+            <ContainerButton>
+
+
+              <ButtonDelete>
+                Excluir filme
+              </ButtonDelete>
+
+              <ButtonSave
+               onClick={handleSubmit}
+              >
+                Salvar Filme
+              </ButtonSave>   
+              
+            </ContainerButton>
         </Form>
-      <ContainerButton>
-
-
-        <ButtonDelete>
-          Excluir filme
-        </ButtonDelete>
-
-        <ButtonSave
-        //  onClick={()=> addTag(tagInput)}
-        >
-          Salvar Filme
-        </ButtonSave>   
-        
-      </ContainerButton>
                          
       </Container>
     </>
