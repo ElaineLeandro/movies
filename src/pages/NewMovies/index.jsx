@@ -2,7 +2,7 @@ import { Header } from '../../components/Header'
 import { Textarea } from '../../components/TexTarea';
 import { Section } from '../../components/Section';
 import { ItemNew } from '../../components/ItemNew';
-import { Container,Form, LinkMovie, NewMovie,WrapUp, InputForm, ButtonDelete, ButtonSave, ContainerButton, PackageInt,PackageInN  } from "./styles";
+import { Container,Form, LinkMovie, NewMovie,WrapUp, InputForm, ButtonSave, ContainerButton, PackageInt,PackageInN  } from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
 import { useState } from 'react';
 import { useTagList } from '../../hooks/useTagList/useTagList';
@@ -104,8 +104,6 @@ export function NewMovies(){
   }
 
   function handleSubmit(e){
-    console.log("Entrou no submit!")
-
     e.preventDefault();
 
     if (commentError || ratingError || observationError || tagList.length === 0) {
@@ -156,6 +154,7 @@ export function NewMovies(){
             </PackageInt>
             <PackageInN>
               <InputForm 
+                 type='number'
                   placeholder='Sua nota (de 0 a 5)'
                   maxLength={1}
                   value={rating}
@@ -163,7 +162,6 @@ export function NewMovies(){
                   className={ratingError? 'error-input' : ''}
                   
                 />
-                {rating}
               {ratingError  && <span className="error-message">{ratingError}</span>}
             </PackageInN>
           </WrapUp>
