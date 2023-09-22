@@ -4,7 +4,7 @@ import { Section } from '../../components/Section';
 import { ItemNew } from '../../components/ItemNew';
 import { Container,Form, LinkMovie, NewMovie,WrapUp, InputForm, ButtonDelete, ButtonSave, ContainerButton, PackageInt,PackageInN  } from "./styles";
 import { BiArrowBack } from 'react-icons/bi';
-import { useState, useEffect  } from 'react';
+import { useState } from 'react';
 import { useTagList } from '../../hooks/useTagList/useTagList';
 import { Link } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ export function NewMovies(){
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   function handleAddTag(){
-    if (tagInput !== '' || tagInput == tagInput){
+    if (tagInput !== ''){
       addTag(tagInput);
       setTagInput('');
     }
@@ -43,13 +43,10 @@ export function NewMovies(){
 
   function handleRemoveTag(tag) {
     removeTag(tag);
-    // console.log("A Magica acontece",removeTag(tag))
+
   }
 
   function validateComment(){
-    console.log("Caiu Aqui!",comment)
-    // if(comment.length === ''){
-    //   setCommentError('Este campo é obrigatório')
     if( comment.length < 3 ){
       setCommentError('O titulo deve ter no minimo 3 carcteres')
     }else if(comment.length > 3){
@@ -68,56 +65,38 @@ export function NewMovies(){
   }
 
   function handleCommentChange(event){
-    setComment(event.target.value)
+    const newComment = event.target.value
+    setComment(newComment)
     validateComment() 
+    const formData = {
+      comment: newComment,
+      rating: rating,
+      observation: observation,
+      tagList: tagList,
+    };
+    localStorage.setItem('formData', JSON.stringify(formData));
   }
 
-  function handleRatingChange (e) { 
-    const regex = /^[0-9\b]+$/;
-    const valueInput = e.target.value
-    if (!valueInput === "" || (regex.test(valueInput) && valueInput >= 0 && valueInput <= 5)) { 
-        setRating(valueInput)
-        setRatingError("")
-    }else{
-      setRating("")
-      setRatingError("Esse campo é obrigatorio!")
+  function handleRatingChange (e) {
+    if(!e.target.value.length){
+      setRatingError("Esse campo é obrigatório.")
+      setRating('')
+      return
     }
-      // const value = event.target.value
 
+    const regex = /[^0-5]/g;
+    const valueInput = e.target.value.replace(regex,'')
+    const valueAsNumber = parseInt(valueInput)
 
-
-    // console.log("Pizza",value)
-    // if(!value){
-    //   setRatingError("Esse campo é obrigatorio!")
-    //   setRating('')
-    //   return 
-    // }
-    // const filteredValue = value.match(/[0-5]/g).join()
-    // setRating(filteredValue)
-    // console.log(filteredValue)
+    if (valueAsNumber >= 0 && valueAsNumber <= 5) {
+      
+      setRating(valueInput)
+      setRatingError("")
+      console.log("Deu bom!!!")
+      return
+    }
+   
    }
-
-  // function validateRating(event) {
-  //   const value = event.target.value;
-  //   const convertValue = Number(value)
-  //   console.log("CAIU BALÃO Number",convertValue)
-  //   if(!/^\d+$/.test(value)){
-  //     console.log("Mostra o Valor",value)
-  //     return 
-  //   }
-  //   console.log("Mostra O valor", value)
-  //   if (value === ' ') {
-  //     console.log("Caiu Aqui!",convertValue)
-  //     setRatingError('Este campo é obrigatório!');
-
-  //   } else if (convertValue < 0 || convertValue > 5) {
-  //     setRating('');
-  //     setRatingError('A classificação deve ser um número entre 0 e 5!');
-  //   } else {
-  //     setRating(value);
-  //     setRatingError('');
-  //   }
-  // }
 
   
   function handleObservationChange(event){
@@ -126,35 +105,31 @@ export function NewMovies(){
   }
 
   function handleSubmit(e){
-    console.log("Entrou no submet!")
+    console.log("Entrou no submit!")
 
     e.preventDefault();
+
     if (commentError || ratingError || observationError || tagList.length === 0) {
       // Não envie o formulário se houver erros de validação
       return;
     }
     setIsSubmitting(true)
-
+    saveData()
     setIsSubmitting(false)
   }
 
-  
-useEffect(()=>{
-  console.log("FomeZero!")
-  const storedFormData  = JSON.perse(localStorage.getItem("formData")) ||{
-    comment:'',
-    rating: '',
-    observation: '',
-    tagList: '',
+  function saveData(){
+    const oldMovies = JSON.parse(localStorage.getItem('MOVIES') ?? '[]')
+    const newMovie = {
+      title: comment,
+      rating,
+      description: observation,
+      tags: tagList
+    }
+
+    localStorage.setItem('MOVIES', JSON.stringify([...oldMovies, newMovie]))
   }
-
-    setComment(storedFormData.comment)
-    setRating(storedFormData.rating)
-    setObservation(storedFormData.observation)
-    setTagList(storedFormData.tagList)
-}, [])
-
-
+  
   return(
     <>
       <Header/>
@@ -183,10 +158,7 @@ useEffect(()=>{
             <PackageInN>
               <InputForm 
                   placeholder='Sua nota (de 0 a 5)'
-                  type="number"
-                  min={0}
-                  max={5}
-                  maxlength={1}
+                  maxLength={1}
                   value={rating}
                   onChange={handleRatingChange}
                   className={ratingError? 'error-input' : ''}
@@ -205,7 +177,6 @@ useEffect(()=>{
            
            className={observationError? 'error-input' : ''}
           /> 
-            {console.log(observationError)}  
            {observationError && <span className="error-message">{observationError}</span>} 
 
           <Section title="Marcadores">
@@ -225,10 +196,10 @@ useEffect(()=>{
           </Section>                      
             <ContainerButton>
 
-
+{/* 
               <ButtonDelete>
                 Excluir filme
-              </ButtonDelete>
+              </ButtonDelete> */}
 
               <ButtonSave
                onClick={handleSubmit}

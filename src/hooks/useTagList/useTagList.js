@@ -48,6 +48,7 @@ export function useTagList() {
   
     return {
       tagList,
+      setTagList,
       addTag,
       removeTag,
     
