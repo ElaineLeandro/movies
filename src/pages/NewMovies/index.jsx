@@ -92,7 +92,6 @@ export function NewMovies(){
       
       setRating(valueInput)
       setRatingError("")
-      console.log("Deu bom!!!")
       return
     }
    
