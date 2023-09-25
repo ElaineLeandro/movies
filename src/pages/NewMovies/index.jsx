@@ -96,7 +96,6 @@ export function NewMovies(){
     }
    
    }
-
   
   function handleObservationChange(event){
     setObservation(event.target.value)
@@ -118,6 +117,7 @@ export function NewMovies(){
   function saveData(){
     const oldMovies = JSON.parse(localStorage.getItem('MOVIES') ?? '[]')
     const newMovie = {
+      id, 
       title: comment,
       rating,
       description: observation,
@@ -153,11 +153,11 @@ export function NewMovies(){
                 {commentError  && <span className="error-message">{commentError}</span>}
             </PackageInt>
             <PackageInN>
-              <InputForm 
-                 type='number'
+              <InputForm  
                   placeholder='Sua nota (de 0 a 5)'
                   maxLength={1}
                   value={rating}
+                  defaultValue={}
                   onChange={handleRatingChange}
                   className={ratingError? 'error-input' : ''}
                   
