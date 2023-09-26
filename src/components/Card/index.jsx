@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { Tagging } from "../Tagging";
 import { Container, Title, Icon,Content, Flags} from "./styles";
 import { ImStarFull,ImStarEmpty} from "react-icons/im";
 
 
-    export function Card({title, icon , paragraph }) {
+    export function Card({title, icon , paragraph}) {
     return(
         <Container>
             
@@ -22,9 +23,9 @@ import { ImStarFull,ImStarEmpty} from "react-icons/im";
             </Content>
             
             <Flags>
-            <Tagging tag="Ficção Científica" />
-            <Tagging tag="Drama" />
-            <Tagging tag="Familia" />
+            <Tagging />
+            
+            
             </Flags>
            
         </Container>

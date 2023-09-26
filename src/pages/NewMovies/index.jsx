@@ -13,19 +13,7 @@ export function NewMovies(){
 
   const [tagInput, setTagInput] = useState('');
   const {tagList, addTag, removeTag} = useTagList('');
-  // const [form, setForm] = useState({ 
-  //   comment:"",
-  //   rating: "",
-  //   observation: ""
-
-  //  })
-  //  const [messageError, setMessageError] = useState({ 
-  //   comment:"",
-  //   rating: "",
-  //   observation: ""
-
-  //   /** setMessageError(oldError => ({...oldError, comment: 'O titulo deve ter no minimo 3 carcteres'}) )  */
-  //  })
+ 
   const [comment, setComment] = useState('')
   const [commentError, setCommentError] = useState('')
   const [rating, setRating] = useState('');
@@ -117,7 +105,6 @@ export function NewMovies(){
   function saveData(){
     const oldMovies = JSON.parse(localStorage.getItem('MOVIES') ?? '[]')
     const newMovie = {
-      id, 
       title: comment,
       rating,
       description: observation,
@@ -157,7 +144,6 @@ export function NewMovies(){
                   placeholder='Sua nota (de 0 a 5)'
                   maxLength={1}
                   value={rating}
-                  defaultValue={}
                   onChange={handleRatingChange}
                   className={ratingError? 'error-input' : ''}
                   
